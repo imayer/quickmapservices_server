@@ -172,6 +172,10 @@ class GeoService(models.Model):
     source = models.TextField(_('source'), blank=True, null=True)
     source_url = models.URLField(_('source url'), max_length=512, blank=True, null=True)
 
+    # extent
+    boundary = models.TextField(_('boundaries polygon (GeoJSON)'), blank=True, null=True)
+    extent = models.CharField(_('service extent'), max_length=100, validators=[validators.validate_comma_separated_integer_list], blank=True, null=True)
+
     # tags
 
 

@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from .views import GeoServiceListView, GeoServiceDetailedView, ApiRootView, ServiceIconListView, ServiceIconDetailedView, \
+from .views import GeoServiceListView, GeoServiceDetailedView, GeoServiceBoundaryView, ApiRootView, ServiceIconListView, ServiceIconDetailedView, \
     IconRetrieveView, DefaultIconRetrieveView
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
 
     url(r'^geoservices/$', GeoServiceListView.as_view(), name='geoservice_list'),
     url(r'^geoservices/(?P<pk>[0-9]+)/$', GeoServiceDetailedView.as_view(), name='geoservice_detail'),
+    url(r'^geoservices/boundary/(?P<pk>[0-9]+)/$', GeoServiceBoundaryView.as_view(), name='geoservice_boundary'),
 
     # icons
     url(r'^icons/$', ServiceIconListView.as_view(), name='service_icon_list'),

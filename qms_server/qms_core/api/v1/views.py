@@ -50,6 +50,12 @@ class ServiceIconSerializer(ModelSerializer):
         fields = ('id', 'guid', 'name')
 
 
+class GeoServiceBoundarySerializer(ModelSerializer):
+    class Meta:
+        model = GeoService
+        fields = ('boundaries',)
+
+
 # === Views Geoservices
 
 class GeoServiceListView(ListAPIView):
@@ -95,6 +101,12 @@ class GeoServiceDetailedView(RetrieveAPIView):
                 return GeoJsonServiceSerializer(instance)
 
         return GeoServiceSerializer(instance)
+
+
+class GeoServiceBoundaryView(RetrieveAPIView):
+    queryset = GeoService.objects.all()
+    serializer_class = GeoServiceBoundarySerializer
+
 
 # === Views Icons
 
