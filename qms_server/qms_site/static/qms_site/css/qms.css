@@ -149,6 +149,33 @@
 .qms-add-service__license-form {
   display: none; }
 
+.boundary-textarea {
+    font-size: 13px;
+}
+
+.close-map-container-link {
+    position: absolute;
+    z-index: 999;
+    top: 5px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background: #fff;
+}
+
+/* класс next_gis_common/main.css .inner-form не подходит, так как
+ bottom: -30px сдвигает блок в самый низ страницы, а он должен быть выше, на уровне ссылки,
+ открывающей модальное окно */
+.service-boundary-map-container {
+  display: none;
+  position: relative;
+ }
+
+.service-boundary-map {
+    height:400px;
+}
+
 .qms-add-service__license-info .qms-add-service__license-filled {
   display: none; }
 

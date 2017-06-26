@@ -3,9 +3,13 @@
 {% load i18n %}
 
 {% block extra_head %}
+    <link rel="stylesheet" href="{% static 'qms_site/css/leaflet.css' %}" />
+    <link rel="stylesheet" href="{% static 'qms_site/css/leaflet.draw.css' %}" />
     <link href="{% static 'qms_site/css/qms.css' %}" type="text/css" rel="stylesheet"/>
 {% endblock %}
 {% block extra_body %}
+    <script src="{% static 'qms_site/js/vendor/leaflet.js' %}"></script>
+    <script src="{% static 'qms_site/js/vendor/leaflet.draw.js' %}"></script>
     <script src="{% static 'qms_site/js/qms.js' %}"></script>
 {% endblock %}
 {% block head_title %}{% trans "Add service" %} | QuickMapServices{% endblock %}

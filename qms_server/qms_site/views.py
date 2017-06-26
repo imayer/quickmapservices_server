@@ -18,7 +18,7 @@ from qms_site.forms import TmsForm, WmsForm, WfsForm, GeoJsonForm, AuthReportFor
 from django.utils.translation import gettext_lazy as _
 
 from qms_site.models import ReportType
-
+import pdb
 
 class GeoserviceListView(TemplateView):
     template_name = 'list.html'
@@ -159,6 +159,7 @@ class CreateServiceView(LicenseErrorsMixin, LoginRequiredMixin, TemplateView):
                 context['error_form_type'] = kwargs['error_form_type']
 
         context['forms'] = forms
+        
         return context
 
 

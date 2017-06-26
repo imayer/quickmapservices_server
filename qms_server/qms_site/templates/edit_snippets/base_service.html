@@ -38,6 +38,15 @@
                         <span id="{{ form.source.auto_id }}-error" class="has-error">{{ form.source.errors }}</span>
                         {% endif %}
                     </div>
+                    <div class="form-group clearfix {% if form.boundary.errors %}has-error{% endif %}">
+                        <label class="control-label" for="{{form.boundary.id_for_label}}">{% trans 'Place service boundary GeoJSON here or' %}&nbsp;<a href="#" class="service-boundary-link">{% trans 'draw boundary on map' %}</a></label>
+
+                        <textarea class="form-control boundary-textarea" id="{{form.boundary.auto_id}}" name="{{form.boundary.name}}" aria-describedby="{{ form.boundary.auto_id }}-error"  placeholder ="{% trans 'boundary GeoJSON' %}" rows="4">{{form.boundary.value|default:""}}</textarea>
+
+                        <div id="{{ form_name }}-boundary-map-container" class="service-boundary-map-container">
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-2"> {# right(icon) part #}
                     {{ form.icon | add_class:'image-select image-select--warm form-control'|attr_with_id:'aria-describedby:$id-error'|attr:'tabindex:-1' | set_data:'image-select-src:/api/v1/icons/$val/content' }}
